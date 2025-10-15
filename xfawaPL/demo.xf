@@ -1,0 +1,44 @@
+message := "Hello XfawaPL"
+
+#python[[
+print("Python:", message)
+for i in range(3):
+    print(f"Count: {i}")
+]]
+
+#bash[[
+echo "Bash: Current directory"
+pwd
+echo "Files:"
+ls -la | head -3
+]]
+
+#c[[
+#include <stdio.h>
+int main() {
+    printf("C Program Running\n");
+    for(int i=1; i<=3; i++) {
+        printf("Loop: %d\n", i);
+    }
+    return 0;
+}
+]]
+
+#cpp[[
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "C++ Program Running" << endl;
+    for(int i=1; i<=3; i++) {
+        cout << "Loop: " << i << endl;
+    }
+    return 0;
+}
+]]
+
+#javascript[[
+console.log("JavaScript Running");
+for(let i=1; i<=3; i++) {
+    console.log("Loop: " + i);
+}
+]]
