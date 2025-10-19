@@ -1,0 +1,22 @@
+import os
+
+class LuaHandler:
+    def generate(self, code, output_path, index):
+        filename = f"lua_block_{index}.lua"
+        filepath = os.path.join(output_path, filename)
+        
+        # 生成Lua文件
+        with open(filepath, 'w') as f:
+            f.write("function main()\n")
+            for line in code.split('\n'):
+                f.write(f"    {line}\n")
+            f.write("end\n")
+            f.write("main()\n")
+        
+        # 返回块信息
+        return {
+            'id': f"block_{index}",
+            'filename': filename,
+            'filepath': filepath,
+            'block_ref': filepath
+        }

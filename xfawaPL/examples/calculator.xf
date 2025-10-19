@@ -1,0 +1,21 @@
+#Python [[
+def add(a, b):
+    return a + b
+]]
+
+#C [[
+int multiply(int a, int b) {
+    return a * b;
+}
+]]
+
+#Main [[
+print("5 + 3 =", xfawa.call("Python", "add", 5, 3))
+print("5 * 3 =", xfawa.call("C", "multiply", 5, 3))
+]]
+
+#data [[
+{
+    "Define_Output": true
+}
+]]

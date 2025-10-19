@@ -1,0 +1,32 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    gcc \
+    g++ \
+    openjdk-11-jdk \
+    nodejs \
+    npm \
+    golang \
+    lua5.3 \
+    ruby \
+    php \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY . /app
+
+{% if dependencies.python %}
+RUN pip3 install {{ dependencies.python|join(' ') }}
+{% endif %}
+
+{% if dependencies.node %}
+RUN npm install -g {{ dependencies.node|join(' ') }}
+{% endif %}
+
+RUN chmod +x build.sh
+RUN ./build.sh
+
+CMD ["python3", "entry.py"]

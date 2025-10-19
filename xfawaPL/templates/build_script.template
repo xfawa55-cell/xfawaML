@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Building xfawaPL application..."
+
+{% for lang, files in file_map.items() %}
+{% for file in files %}
+{% if lang == 'c' %}
+gcc {{ file.filepath }} -o {{ file.exe_path }}
+{% elif lang == 'cpp' %}
+g++ {{ file.filepath }} -o {{ file.exe_path }}
+{% elif lang == 'java' %}
+javac {{ file.filepath }}
+{% elif lang == 'go' %}
+go build -o {{ file.exe_path }} {{ file.filepath }}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+echo "Build completed successfully!"
