@@ -9,12 +9,6 @@ xfawaPL is a multi-language programming language that allows embedding and mixin
 - **Cross-platform**: Compile to Linux, Windows and Android executables
 - **Dependency management**: Declare dependencies in metadata block
 
-## Installation
-
-bash
-pip install -r requirements.txt
-python setup.py install
-
 ## Usage
 
 ### Compile a .xf file
