@@ -11,6 +11,11 @@ xfawaPL is a multi-language programming language that allows embedding and mixin
 
 ## Usage
 
+## Installation
+
+bash
+pip install -r xfawaPL/requirements.txt && python xfawaPL/setup.py
+
 ### Compile a .xf file
 
 bash
