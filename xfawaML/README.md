@@ -1,4 +1,4 @@
-# xfawaPL Programming Language
+# xfawaML Programming Language
 
 xfawaPL is a multi-language programming language that allows embedding and mixing code from different programming languages in a single source file.
 
@@ -17,10 +17,10 @@ python setup.py install
 
 ## Usage
 
-### Compile a .xf file
+### Compile a .xfml file
 
 bash
-xfawac examples/hello_world.xf -o hello_world -p linux
+xfawac examples/hello_world.xfml -o hello_world -p linux
 
 ### Run the application
 
