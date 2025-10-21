@@ -1,27 +1,80 @@
-# xfawaPL
-This is a new programming language, maybe not, but it's still very good. The function of this language is to nest the grammatical functions of other languages, for example:
+# xfawaML Programming Language
 
-#include <stdio.h>
+xfawaPL is a multi-language programming language that allows embedding and mixing code from different programming languages in a single source file.
 
-int main() {
-    printf("Hello, World!");
-    return 0;
+## Features
+
+- **Multi-language support**: Mix Python, C, C++, Java, Go, JavaScript, Lua, Ruby, PHP and Shell in one file
+- **Flexible execution control**: Define execution order with `xfawa.run()` in Main block
+- **Cross-platform**: Compile to Linux, Windows and Android executables
+- **Dependency management**: Declare dependencies in metadata block
+
+## Installation
+
+bash
+pip install -r requirements.txt
+python setup.py install
+
+## Usage
+
+### Compile a .xfml file
+
+bash
+xfawac examples/hello_world.xfml -o hello_world -p linux
+
+### Run the application
+
+For Linux
+bash
+tar -xzf dist/hello_world.tar.gz
+cd hello_world
+./hello_world
+
+For Windows
+bash
+unzip dist/hello_world.zip
+cd hello_world
+hello_world.exe
+
+For Android
+bash
+adb install dist/hello_world.apk
+
+## Syntax
+
+### Language Blocks
+
+LanguageName [[
+// Code in the target language
+]]
+
+### Main Block (Optional)
+
+Main [[
+// Control execution flow
+xfawa.run("Language1")
+xfawa.run("Language2")
+]]
+
+### Metadata Block
+
+data [[
+{
+"Define_Output": true, // Enable Main block control
+"dependencies": {
+"python": ["numpy", "pandas"]
 }
-
-This is a c language HelloWorld:
-
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
 }
+]]
 
-And this is a java HelloWorld, so what do you do to get them to run together?
-This is a good question. The magic of this language is that it can put java and c code in the same file and run it together
-# Other languages supported/Run command
-Other languages currently supported are: Python shell lua C C++ go Ruby php Java JavaScript
-A lot, at least in my opinion, the running command is like this
+## Examples
 
-### python xfawa.py Your file name.xf
+See the `examples/` directory for sample programs.
 
-Copy this command to the command line and it will run xfawaPL the code for
+## Contributing
+
+Contributions are welcome! Please submit pull requests or open issues on GitHub.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
