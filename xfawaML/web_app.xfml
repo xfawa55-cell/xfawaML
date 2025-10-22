@@ -1,0 +1,28 @@
+#Python [[
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello from Flask"
+]]
+
+#JavaScript [[
+// 前端JavaScript代码
+document.getElementById('btn').addEventListener('click', function() {
+    alert('Button clicked!');
+});
+]]
+
+#Main [[
+xfawa.run("Python")  # 启动Flask服务器 Start the flask server
+]]
+
+#data [[
+{
+    "Define_Output": true,
+    "dependencies": {
+        "python": ["flask"]
+    }
+}
+]]
