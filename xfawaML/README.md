@@ -1,6 +1,6 @@
 # xfawaML Programming Language
 
-xfawaPL is a multi-language programming language that allows embedding and mixing code from different programming languages in a single source file.
+xfawaML is a multi-language programming language that allows embedding and mixing code from different programming languages in a single source file.
 
 ## Features
 
